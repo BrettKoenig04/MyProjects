@@ -1,0 +1,57 @@
+{% extends 'lmn/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/badge.css' %}">
+{% endblock %}
+{% block content %}
+
+<h2>Your Profile</h2>
+
+<p class="account-heading">Username: {{ user_profile.username }}</p>
+<p class="text-secondary">Email: {{ user_profile.email }}</p>
+
+{% if reward == "gold"%}
+<P>Badge:<img class="badge" src="{% static 'images/badge_image3.jpg' %}"  alt="My image"> </p>
+
+
+{% elif  reward == "silver" %}
+<P>Badge: <img class="badge" src="{% static 'images/badge_image2.jpg' %}" alt="My image"></p>
+
+{% elif reward == "bronze"%}
+<P>Badge: <img class="badge" src="{% static 'images/badge_image1.jpg' %}"  alt="My image"></p>
+
+{% else %}
+<P>Badge: You earn badges when you post one or more notes!</p>
+
+{% endif %}
+
+
+{% if user_profile.profile.favorite_Artist %}
+    <p class="text-secondary">Favorite Artist: {{ user_profile.profile.favorite_Artist }}</p>
+{% endif %}
+
+{% if user_profile.profile.favorite_Venue %}
+    <p class="text-secondary">Favorite Venue: {{ user_profile.profile.favorite_Venue }}</p>
+{% endif %}
+{% if user_profile.profile.favorite_Show %}
+    <p class="text-secondary">Favorite Show: {{ user_profile.profile.favorite_Show }}</p>
+{% endif %}
+
+<hr>
+
+<form method="POST" action="{% url 'my_user_profile' %}" >
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Update Profile</legend>
+        {{ user_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+        <br>
+        <button class="btn btn-outline-info" type="submit">Submit</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+db.sqlite3
+
+# python-related
+__pycache__
+*.pyc
+
+# ignore editor-specific files 
+.vscode
+.idea
+
+# ignore virtual enviroments 
+venv
+env
+
+
+debug.log
+.env
+.gcloudignore
+app.yaml
+www
+cloud_sql_proxy.exe
+git
+media/
+.env
+lmnop-credentials.json
+

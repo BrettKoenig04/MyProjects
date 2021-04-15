@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Albertsons Grocery Store</h1>
+<form>
+<img class="fit-picture"
+     src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/34094/cash-register-clipart-md.png"
+     alt="Cash Register" width="400" height="400">  
+  <p> Register Info: </P> 
+
+<!--Label/Input fields (We can call these based on the id given)-->    
+<label>Amount Given:</label>
+<input type="text" id="given" name="given"><br><br>
+<label>Product Cost:</label>
+<input type="text" id="cost" name="cost"><br><br>
+<label>Total Change:</label>
+<input type="text" id="DisplayChange" name="DisplayChange" readonly><br><br>
+<button id="calculate">Calculate Change</button>
+<button id="clear">Clear Fields</button>
+
+<!--Script allows us to use JavaScript within the same file-->
+<script>
+  // Event listenr calls either getChange function or clearFields based on button click event
+  document.getElementById("calculate").addEventListener("click", getChange);
+  document.getElementById("clear").addEventListener("click", clearFields);
+
+function getChange(e) {
+  // preventDefault is used to prevent the page from refreshing upon button click even (Input fields aren't erased)
+  e.preventDefault();
+  var given = Number(document.getElementById("given").value);
+  var cost = Number(document.getElementById("cost").value);
+  var changeText = (given - cost);
+  console.log(changeText)
+  var amount = (given - cost) * 100;
+
+  // We're using .map() and multiplying so that we can get precise decimals
+  billValues = [100, 50, 20, 10, 5, 2, 1, 0.25, 0.10, 0.05, 0.01].map(n => n * 100)
+  listBillNames = ['Hundred', 'Fifty', 'Twenty', 'Ten', 'Five', 'Two', 'One', 'Quarter', 'Dime', 'Nickel', 'Penny']
+  listBillCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  //Loop through both list and add's 1 to the current index in listBillCount based on condition
+  for (i = 0; i < billValues.length; i++) {
+    while (amount >= billValues[i]) {
+      listBillCount[i] += 1;
+      amount -= billValues[i]
+      console.log(listBillCount[i], amount)
+    }
+  }
+
+  // Build string to display change output for cashier
+  var text = "";
+  for (var i = 0; i < listBillCount.length; i++) {
+    text += + listBillCount[i] + ": " + listBillNames[i] + "\n";
+  }
+  text = text.slice(0, -1);
+  console.log(text)
+
+  // Sets textfiel values for total change and our textarea for the cashier
+  document.getElementById("DisplayChange").value = changeText;
+  document.getElementById("change").value = text;
+}
+
+function clearFields(e) {
+  // preventDefault is used to prevent the page from refreshing upon button click even (Input fields aren't erased)
+  e.preventDefault();
+  document.getElementById("given").value = "";
+  document.getElementById("cost").value = "";
+  document.getElementById("change").value = "";
+}
+</script>
+<script>
+  function clearFields(e) {
+     document.getElementById("given").value = "";
+     document.getElementById("cost").value = "";
+     document.getElementById("change").value = "";
+     e.preventDefault()
+}
+
+
+
+
+</script>
+<br>
+<br>
+<!--textarea is used to display each bill type and amount due to customer-->
+<textarea id="change" name="change" rows="12" cols="20"></textarea>
+</form>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brett's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="#home" id="navbar__logo">WELCOME</a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="#home" class="navbar__links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#about" class="navbar__links" id="about-page">About</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#projects" class="navbar__links" id="projects-page"
+              >Projects</a
+            >
+          </li>
+          <li class="navbar__btn">
+            <a href="#contact-me" class="button" id="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Hero Section-->
+    <div class="hero" id="home">
+      <div class="hero__container">
+        <h1 class="hero__heading"><span>Programmer</span></h1>
+        <h1 class="hero__heading"><span>&</span></h1>
+        <p class="hero__description">Graphic designer</p>
+        <button class="main__btn"><a href="#">Explore</a></button>
+      </div>
+    </div>
+
+    <!--About Section-->
+    <div class="main" id="about">
+      <div class="main__container">
+        <div class="main__img--container">
+          <div class="main__img--card"><i class="fas fa-file-code"></i></div>
+        </div>
+        <div class="main__content">
+          <h2>Proficient in:</h2>
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>SQL</li>
+            <li>MySQL</li>
+          </ul>
+          <br>
+          <br>
+          <h3>Other Languages:</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>SQL</li>
+            <li>MySQL</li>
+          </ul>
+          <button class="main__btn"><a href="#">Schedule Call</a></button>
+        </div>
+      </div>
+    </div>
+
+    <!--Projects Section-->
+    <div class="projects" id="projects">
+      <h1>Recent Projects</h1>
+      <div class="projects__wrapper">
+        <div class="projects__card">
+          <h2>Travel Wishlist</h2>
+          <div class="projects__btn"><button onclick=" window.open('https://github.com/BrettKoenig04/MyProjects/tree/master/Django%20Wishlist','_blank')">View Project</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Live Music Notes</h2>
+          <div class="projects__btn"><button onclick=" window.open('https://github.com/BrettKoenig04/MyProjects/tree/master/LMN','_blank')">View Project</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Space Invader Remake</h2>
+          <div class="projects__btn"><button onclick=" window.open('https://github.com/BrettKoenig04/MyProjects/tree/master/Games/Space%20Invader%20Remake','_blank')">View Project</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Bitcoin Conversion</h2>
+          <div class="projects__btn"><button onclick=" window.open('https://github.com/BrettKoenig04/MyProjects/tree/master/Bitcoin%20Conversion','_blank')">View Project</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Features Section-->
+    <div class="main" id="contact-me">
+      <div class="main__container">
+        <div class="main__content">
+          <h2>CONTACT FORM:</h2>
+          <form class="contact-form" action="contact.php" method="post">
+            <input type="text" name="name" placeholder="Full name">
+            <input type="text" name="email" placeholder="Your e-mail">
+            <input type="text" name="subject" placeholder="Subject">
+            <br>
+            <br>
+            <textarea name="message" placeholder="Message"></textarea>
+            <br>
+            <button type="submit" name="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="main__img--container">
+          <div class="main__img--card" id="card-2"><i class="fas fa-envelope"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer__container">
+      <div class="footer__links">
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <h2>About Us</h2>
+            <a href="/contact__me">How it works</a> <a href="/">Testimonials</a>
+            <a href="/">Careers</a> <a href="/">Terms of Service</a>
+          </div>
+          <div class="footer__link--items">
+            <h2>Contact Us</h2>
+            <a href="/">Contact</a> <a href="/">Support</a>
+            <a href="/">Destinations</a>
+          </div>
+        </div>
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            <h2>Videos</h2>
+            <a href="/">Submit Video</a> <a href="/">Ambassadors</a>
+            <a href="/">Agency</a>
+          </div>
+          <div class="footer__link--items">
+            <h2>Social Media</h2>
+            <a href="/">Instagram</a> <a href="/">Facebook</a>
+            <a href="/">Youtube</a> <a href="/">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo">COLOR</a>
+          </div>
+          <p class="website__rights">© COLOR 2020. All rights reserved</p>
+          <div class="social__icons">
+            <a href="/" class="social__icon--link" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
